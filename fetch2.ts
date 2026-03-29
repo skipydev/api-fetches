@@ -29,8 +29,27 @@ interface User {
 }
 
 
-async function getUserData(dataId: number): Promise<User> {
-	try {
+function getUserData(dataId: number): Promise<User> {
+	return fetch(`${url}/users/${dataId}`)
+	.then(response => response.json())
+
+	.then(dataId => {
+		console.log(dataId)
+		numUsers = dataId
+		return dataId
+	})
+	
+	.catch(e => {
+		console.log(e)
+	})
+}
+
+
+getUserData(4).then(user => console.log('', user))
+
+	
+	
+	/*try {
 		const res = await fetch(`${url}/users/${dataId}`)
 		if (!res.ok) throw new Error(`Whoops: ${res.status}`)
 		const user = await res.json() as User
@@ -42,11 +61,6 @@ async function getUserData(dataId: number): Promise<User> {
 		console.error(e)
 		throw e
 	}
-}
-
-getUserData(2).then(user => {
-	console.log('Вот эта пешка еббная:', user)
-}).catch(e => {
-	console.error(e)
-	throw e	
-})
+}*/
+		
+	
