@@ -41,6 +41,7 @@ function getUserData(dataId: number): Promise<User> {
 
 	.catch(e => {
 		console.log(e)
+		throw e
 	})
 }
 

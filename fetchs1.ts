@@ -39,23 +39,10 @@ interface Product {
   })
   .catch(e => {
     console.log(e)
+    throw e
   })
 }
 getProduct(5)
 
-
-  /*try{
-		const res = await fetch(`${url}/products/${productId}`)
-		if (!res.ok) throw new Error(`Whoops: ${res.status}`)
-		const product = await res.json() as Product
-		
-		numProduct = productId
-		return product
-	}
-	catch(e) {
-		console.error(e)
-		throw e
-	}
-}*/
 
 
