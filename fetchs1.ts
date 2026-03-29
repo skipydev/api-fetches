@@ -28,8 +28,32 @@ interface Product {
 }
 
 
-async function getProduct(productId: number): Promise<Product> {
-	try{
+ function getProduct(productId: number): Promise<Product> {
+	return fetch(`${url}/products/${productId}`)
+  .then(response => response.json())
+
+  .then(productId => {
+    console.log(productId)
+    numProduct = productId
+    return productId
+  })
+  .catch(e => {
+    console.log(e)
+  })
+}
+getProduct(5).then(product => console.log(product))
+
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  /*try{
 		const res = await fetch(`${url}/products/${productId}`)
 		if (!res.ok) throw new Error(`Whoops: ${res.status}`)
 		const product = await res.json() as Product
@@ -41,11 +65,6 @@ async function getProduct(productId: number): Promise<Product> {
 		console.error(e)
 		throw e
 	}
-}
-getProduct(5).then(product => {
-	console.log(`Товар:`, product )
-}).catch(e => {
-	console.error(e)
-	throw e
-})
+}*/
+
 
