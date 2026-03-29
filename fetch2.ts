@@ -38,29 +38,13 @@ function getUserData(dataId: number): Promise<User> {
 		numUsers = dataId
 		return dataId
 	})
-	
+
 	.catch(e => {
 		console.log(e)
 	})
 }
 
 
-getUserData(4).then(user => console.log('', user))
+getUserData(4)
 
-	
-	
-	/*try {
-		const res = await fetch(`${url}/users/${dataId}`)
-		if (!res.ok) throw new Error(`Whoops: ${res.status}`)
-		const user = await res.json() as User
-		
-		numUsers = dataId
-		return user
-	}
-	catch(e) {
-		console.error(e)
-		throw e
-	}
-}*/
-		
 	

@@ -41,18 +41,9 @@ interface Product {
     console.log(e)
   })
 }
-getProduct(5).then(product => console.log(product))
+getProduct(5)
 
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
+
   /*try{
 		const res = await fetch(`${url}/products/${productId}`)
 		if (!res.ok) throw new Error(`Whoops: ${res.status}`)
