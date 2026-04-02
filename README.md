@@ -1,1 +1,2 @@
 # api-fetches
+I wrote several files that access the same website. The website is https://fakeapi.net. All the files are written using promises, two of them using pure promises, and the other using async/await.
