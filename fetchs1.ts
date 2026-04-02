@@ -27,7 +27,6 @@ interface Product {
   rating: Rating;
 }
 
-
  function getProduct(productId: number): Promise<Product> {
 	return fetch(`${url}/products/${productId}`)
   .then(response => response.json())
